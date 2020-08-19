@@ -18,14 +18,11 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
     return Scaffold(
+      backgroundColor: Colors.red,
       body: Stack(
         children: [
-          Content(
-            scrollController: _scrollController,
-            height: size.height,
-          ),
+          Content(_scrollController),
           Header(_scrollController),
         ],
       ),

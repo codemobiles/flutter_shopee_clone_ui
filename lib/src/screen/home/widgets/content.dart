@@ -5,10 +5,8 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 class Content extends StatefulWidget {
   final TrackingScrollController scrollController;
-  final double height;
 
-  const Content({Key key, this.scrollController, this.height})
-      : super(key: key);
+  const Content(this.scrollController);
 
   @override
   _ContentState createState() => _ContentState();
@@ -41,9 +39,9 @@ class _ContentState extends State<Content> {
               children: <Widget>[
                 if (!controller.isIdle)
                   Positioned(
-                    top: 35.0 * controller.value,
+                    top: 0 * controller.value,
                     child: SizedBox(
-                      height: 30,
+                      height: 0,
                       width: 30,
                       child: SpinKitThreeBounce(
                         color: Colors.deepOrange,
@@ -64,7 +62,7 @@ class _ContentState extends State<Content> {
         controller: widget.scrollController,
         child: Column(
           children: [
-            BannerSlide(widget.height),
+            BannerSlide(),
             Container(
               color: Colors.red,
               height: 2000,

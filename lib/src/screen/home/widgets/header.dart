@@ -16,7 +16,7 @@ class _HeaderState extends State<Header> {
   double _opacity;
   double _offset;
 
-  final _opacityMax = 0.03;
+  final _opacityMax = 0.01;
 
   @override
   void initState() {
@@ -41,17 +41,20 @@ class _HeaderState extends State<Header> {
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     _buildSearch(),
-                    SizedBox(width: 18),
+                    SizedBox(width: 8),
                     _buildIconButton(
-                        onPressed: () => print("click"),
-                        icon: Icons.shopping_cart,
-                        notification: 20),
+                      onPressed: () => print("click"),
+                      icon: Icons.shopping_cart,
+                      notification: 20,
+                    ),
                     _buildIconButton(
-                        onPressed: () => print("click"),
-                        icon: Icons.chat,
-                        notification: 9),
+                      onPressed: () => print("click"),
+                      icon: Icons.chat,
+                      notification: 9,
+                    ),
                   ],
                 ),
               ),
@@ -59,12 +62,15 @@ class _HeaderState extends State<Header> {
           );
   }
 
-  Stack _buildIconButton(
-          {VoidCallback onPressed, IconData icon, int notification = 0}) =>
+  Stack _buildIconButton({
+    VoidCallback onPressed,
+    IconData icon,
+    int notification = 0,
+  }) =>
       Stack(
         children: <Widget>[
           IconButton(
-            iconSize: 32,
+            iconSize: 28,
             onPressed: onPressed,
             icon: Icon(icon),
             color: _colorIcon,
@@ -76,19 +82,19 @@ class _HeaderState extends State<Header> {
                   child: Container(
                     padding: EdgeInsets.all(3),
                     decoration: BoxDecoration(
-                      color: Colors.deepOrangeAccent,
+                      color: Colors.deepOrange,
                       borderRadius: BorderRadius.circular(12),
                       border: Border.all(color: Colors.white),
                     ),
                     constraints: BoxConstraints(
-                      minWidth: 24,
-                      minHeight: 24,
+                      minWidth: 22,
+                      minHeight: 22,
                     ),
                     child: Text(
                       '$notification',
                       style: TextStyle(
                         color: Colors.white,
-                        fontSize: 14,
+                        fontSize: 12,
                       ),
                       textAlign: TextAlign.center,
                     ),
@@ -97,42 +103,58 @@ class _HeaderState extends State<Header> {
         ],
       );
 
-  Expanded _buildSearch() => Expanded(
-        child: TextField(
-          decoration: InputDecoration(
-            contentPadding: EdgeInsets.all(4),
-            enabledBorder: OutlineInputBorder(
-              borderSide: const BorderSide(
-                color: Colors.transparent,
-                width: 0,
-              ),
-              borderRadius: const BorderRadius.all(
-                const Radius.circular(6.0),
-              ),
-            ),
-            isDense: true,
-            hintText: "Shopee",
-            hintStyle: TextStyle(
-              fontSize: 18,
-              color: Colors.deepOrange,
-            ),
-            prefixIcon: Icon(Icons.search),
-            suffixIcon: Icon(Icons.camera_alt),
-            filled: true,
-            fillColor: _backgroundColorSearch,
+  Expanded _buildSearch() {
+    final border = OutlineInputBorder(
+      borderSide: const BorderSide(
+        color: Colors.transparent,
+        width: 0,
+      ),
+      borderRadius: const BorderRadius.all(
+        const Radius.circular(4.0),
+      ),
+    );
+
+    final sizeIcon = BoxConstraints(
+      minWidth: 40,
+      minHeight: 40,
+    );
+
+    return Expanded(
+      child: TextField(
+        decoration: InputDecoration(
+          contentPadding: EdgeInsets.all(4),
+          focusedBorder: border,
+          enabledBorder: border,
+          isDense: true,
+          hintText: "Shopee",
+          hintStyle: TextStyle(
+            fontSize: 18,
+            color: Colors.deepOrange,
           ),
+          prefixIcon: Icon(
+            Icons.search,
+          ),
+          prefixIconConstraints: sizeIcon,
+          suffixIcon: Icon(
+            Icons.camera_alt,
+          ),
+          suffixIconConstraints: sizeIcon,
+          filled: true,
+          fillColor: _backgroundColorSearch,
         ),
-      );
+      ),
+    );
+  }
 
   _onScroll() {
     final scrollOffset = widget.scrollController.offset;
-    if (scrollOffset >= _offset && scrollOffset > 10) {
+    if (scrollOffset >= _offset && scrollOffset > 5) {
       _opacity = double.parse((_opacity + _opacityMax).toStringAsFixed(2));
       if (_opacity >= 1.0) {
         _opacity = 1.0;
       }
       _offset = scrollOffset;
-    } else if (scrollOffset < 20) {
+    } else if (scrollOffset < 100) {
       _opacity = double.parse((_opacity - _opacityMax).toStringAsFixed(2));
       if (_opacity <= 0.0) {
         _opacity = 0.0;
@@ -144,6 +166,7 @@ class _HeaderState extends State<Header> {
         _backgroundColorSearch = Colors.white;
         _colorIcon = Colors.white;
         _offset = 0.0;
+        _opacity = 0.0;
       } else {
         _backgroundColorSearch = Colors.grey[200];
         _colorIcon = Colors.deepOrange;
