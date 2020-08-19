@@ -1,6 +1,7 @@
 import 'package:custom_refresh_indicator/custom_refresh_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_shopee_clone_ui/src/screen/home/widgets/banner_slide.dart';
+import 'package:flutter_shopee_clone_ui/src/screen/home/widgets/main_menu.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 class Content extends StatefulWidget {
@@ -63,10 +64,8 @@ class _ContentState extends State<Content> {
         child: Column(
           children: [
             BannerSlide(),
-            Container(
-              color: Colors.red,
-              height: 2000,
-            ),
+            SizedBox(height: 18),
+            MainMenu(),
           ],
         ),
       ),
