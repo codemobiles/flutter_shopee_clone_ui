@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_shopee_clone_ui/src/models/main_menu.dart' as Menu;
+import 'package:flutter_shopee_clone_ui/src/models/main_menu_model.dart';
 import 'package:flutter_shopee_clone_ui/src/viewmodels/main_menu_view_model.dart';
 
 class MainMenu extends StatelessWidget {
-  final List<Menu.MainMenu> _menus = MainMenuViewModel().getMainMenu();
+  final List<MainMenuModel> _menus = MainMenuViewModel().getMainMenu();
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class MainMenu extends StatelessWidget {
           childAspectRatio: 1.25,
         ),
         itemBuilder: (context, index) {
-          final Menu.MainMenu menu = _menus[index];
+          final MainMenuModel menu = _menus[index];
           return Column(
             children: [
               Container(

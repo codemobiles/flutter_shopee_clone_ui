@@ -116,6 +116,14 @@ class CashInfo extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(4),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.withOpacity(0.5),
+            spreadRadius: 0.2,
+            blurRadius: 7,
+            offset: Offset(0, 1),
+          ),
+        ],
       ),
       child: IntrinsicHeight(
         child: Row(
@@ -155,7 +163,7 @@ class CashInfo extends StatelessWidget {
     String subTitle,
     bool isCoin = false,
   }) {
-    final height = 25.0;
+    final height = 24.0;
     return Expanded(
       flex: 3,
       child: Column(
@@ -174,7 +182,7 @@ class CashInfo extends StatelessWidget {
                 Text(
                   title,
                   style: TextStyle(
-                    fontSize: 16,
+                    fontSize: 15,
                     color: Colors.black,
                   ),
                 ),
@@ -184,7 +192,7 @@ class CashInfo extends StatelessWidget {
           Text(
             subTitle,
             style: TextStyle(
-              fontSize: 12,
+              fontSize: 11,
               color: Colors.grey[700],
             ),
             maxLines: 2,

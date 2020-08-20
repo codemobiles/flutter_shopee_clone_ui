@@ -1,0 +1,22 @@
+PODS:
+  - countdown_flutter (0.0.1):
+    - Flutter
+  - Flutter (1.0.0)
+
+DEPENDENCIES:
+  - countdown_flutter (from `.symlinks/plugins/countdown_flutter/ios`)
+  - Flutter (from `Flutter`)
+
+EXTERNAL SOURCES:
+  countdown_flutter:
+    :path: ".symlinks/plugins/countdown_flutter/ios"
+  Flutter:
+    :path: Flutter
+
+SPEC CHECKSUMS:
+  countdown_flutter: 423a4cc24614ccb078c2ce4ac6739b1d85cbe98b
+  Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
+
+PODFILE CHECKSUM: aafe91acc616949ddb318b77800a7f51bffa2a4c
+
+COCOAPODS: 1.9.1

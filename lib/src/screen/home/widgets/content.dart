@@ -2,6 +2,7 @@ import 'package:custom_refresh_indicator/custom_refresh_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_shopee_clone_ui/src/screen/home/widgets/banner_slide.dart';
 import 'package:flutter_shopee_clone_ui/src/screen/home/widgets/main_menu.dart';
+import 'package:flutter_shopee_clone_ui/src/screen/home/widgets/flash_sale.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 class Content extends StatefulWidget {
@@ -40,9 +41,9 @@ class _ContentState extends State<Content> {
               children: <Widget>[
                 if (!controller.isIdle)
                   Positioned(
-                    top: 0 * controller.value,
+                    top:  100 * controller.value,
                     child: SizedBox(
-                      height: 0,
+                      height: 30,
                       width: 30,
                       child: SpinKitThreeBounce(
                         color: Colors.deepOrange,
@@ -51,7 +52,7 @@ class _ContentState extends State<Content> {
                     ),
                   ),
                 Transform.translate(
-                  offset: Offset(0, 65.0 * controller.value),
+                  offset: Offset(0, 155.0 * controller.value),
                   child: child,
                 ),
               ],
@@ -66,6 +67,12 @@ class _ContentState extends State<Content> {
             BannerSlide(),
             SizedBox(height: 18),
             MainMenu(),
+            Container(
+              height: 14,
+              color: Colors.grey[200],
+            ),
+            FlashSale(),
+            SizedBox(height: 300,)
           ],
         ),
       ),
