@@ -32,7 +32,7 @@ class Story extends StatelessWidget {
       );
 
   Container _buildStoryList() => Container(
-        height: 105,
+        height: 90,
         margin: EdgeInsets.only(top: 14),
         child: ListView.separated(
           padding: EdgeInsets.symmetric(horizontal: 12),

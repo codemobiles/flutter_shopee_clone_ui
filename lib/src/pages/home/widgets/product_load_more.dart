@@ -6,12 +6,12 @@ import 'package:flutter_shopee_clone_ui/src/widgets/discount_painter.dart';
 class ProductLoadMore extends StatelessWidget {
 
   final List<ProductModel> _productViewModel = ProductViewModel().getProduct();
-  
+
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 12.0),
+    return Container(
+      color: Colors.grey[200],
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           _buildHeader(),
           _buildProductList(),
@@ -20,8 +20,9 @@ class ProductLoadMore extends StatelessWidget {
     );
   }
 
-  Padding _buildHeader() => Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 12),
+  Container _buildHeader() => Container(
+    color: Colors.white,
+        padding: const EdgeInsets.all(12),
         child: Text(
           "สินค้าแนะนำประจำนาโนวินาที",
           style: TextStyle(
@@ -31,30 +32,26 @@ class ProductLoadMore extends StatelessWidget {
         ),
       );
 
-  Container _buildProductList() => Container(
-        color: Colors.grey[200],
-        margin: EdgeInsets.only(top: 12),
-        child: Column(
-          children: [
-            GridView.builder(
-              padding: EdgeInsets.all(6),
-              shrinkWrap: true,
-              physics: NeverScrollableScrollPhysics(),
-              itemCount: _productViewModel.length,
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                childAspectRatio: 0.75,
-                crossAxisCount: 2,
-                mainAxisSpacing: 6,
-                crossAxisSpacing: 6,
-              ),
-              itemBuilder: (BuildContext context, int index) {
-                return ProductItemCard(_productViewModel[index]);
-              },
-            ),
-            false ? SizedBox(height: 150) : BottomLoader(),
-          ],
+  Column _buildProductList() => Column(
+    children: [
+      GridView.builder(
+        padding: EdgeInsets.all(6),
+        shrinkWrap: true,
+        physics: NeverScrollableScrollPhysics(),
+        itemCount: _productViewModel.length,
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          childAspectRatio: 0.75,
+          crossAxisCount: 2,
+          mainAxisSpacing: 6,
+          crossAxisSpacing: 6,
         ),
-      );
+        itemBuilder: (BuildContext context, int index) {
+          return ProductItemCard(_productViewModel[index]);
+        },
+      ),
+      false ? SizedBox(height: 150) : BottomLoader(),
+    ],
+  );
 }
 
 class ProductItemCard extends StatelessWidget {

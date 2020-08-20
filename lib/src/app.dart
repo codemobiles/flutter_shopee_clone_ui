@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_shopee_clone_ui/src/screen/home/home_page.dart';
+import 'package:flutter_shopee_clone_ui/src/pages/main/main_page.dart';
 
 class App extends StatelessWidget {
   @override
@@ -11,7 +11,7 @@ class App extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: HomePage(),
+      home: MainPage(),
     );
   }
 }

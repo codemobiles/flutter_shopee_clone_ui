@@ -23,6 +23,10 @@ class StoryViewModel {
         image: "https://image.flaticon.com/icons/svg/281/281764.svg",
         title: "google",
       ),
+      StoryModel(
+        image: "https://image.flaticon.com/icons/svg/3046/3046126.svg",
+        title: "tiktok",
+      ),
     ];
   }
 }

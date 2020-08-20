@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_shopee_clone_ui/src/screen/home/widgets/content.dart';
-import 'package:flutter_shopee_clone_ui/src/screen/home/widgets/header.dart';
+import 'package:flutter_shopee_clone_ui/src/pages/home/widgets/content.dart';
+import 'package:flutter_shopee_clone_ui/src/pages/home/widgets/header.dart';
 
 class HomePage extends StatefulWidget {
   @override
