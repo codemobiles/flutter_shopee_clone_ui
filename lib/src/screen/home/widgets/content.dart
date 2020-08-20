@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_shopee_clone_ui/src/screen/home/widgets/banner_slide.dart';
 import 'package:flutter_shopee_clone_ui/src/screen/home/widgets/main_menu.dart';
 import 'package:flutter_shopee_clone_ui/src/screen/home/widgets/flash_sale.dart';
+import 'package:flutter_shopee_clone_ui/src/screen/home/widgets/story.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 class Content extends StatefulWidget {
@@ -67,15 +68,20 @@ class _ContentState extends State<Content> {
             BannerSlide(),
             SizedBox(height: 18),
             MainMenu(),
-            Container(
-              height: 14,
-              color: Colors.grey[200],
-            ),
+            _buildDivider(),
             FlashSale(),
+            SizedBox(height: 12),
+            _buildDivider(),
+            Story(),
             SizedBox(height: 300,)
           ],
         ),
       ),
     );
   }
+
+  Container _buildDivider() => Container(
+    height: 14,
+    color: Colors.grey[200],
+  );
 }
