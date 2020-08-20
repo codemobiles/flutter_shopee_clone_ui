@@ -2,6 +2,7 @@ import 'package:countdown_flutter/countdown_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_shopee_clone_ui/src/models/flash_sale_model.dart';
 import 'package:flutter_shopee_clone_ui/src/viewmodels/flash_sale_view_model.dart';
+import 'package:flutter_shopee_clone_ui/src/widgets/discount_painter.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 
@@ -293,32 +294,5 @@ class FlashSaleItem extends StatelessWidget {
           ),
       ],
     );
-  }
-}
-
-class DiscountPainter extends CustomPainter {
-  @override
-  void paint(Canvas canvas, Size size) {
-    final path = Path();
-    path.moveTo(0, size.height * 0.25);
-    path.quadraticBezierTo(
-      size.width / 2,
-      size.height / 5.5,
-      size.width,
-      size.height * 0.25,
-    );
-    path.lineTo(size.width, 0);
-    path.lineTo(0, 0);
-
-    final paint = Paint();
-    paint.color = Color(0xfffcd511);
-    paint.style = PaintingStyle.fill;
-
-    canvas.drawPath(path, paint);
-  }
-
-  @override
-  bool shouldRepaint(CustomPainter oldDelegate) {
-    return true;
   }
 }

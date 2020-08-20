@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_shopee_clone_ui/src/screen/home/widgets/banner_slide.dart';
 import 'package:flutter_shopee_clone_ui/src/screen/home/widgets/main_menu.dart';
 import 'package:flutter_shopee_clone_ui/src/screen/home/widgets/flash_sale.dart';
+import 'package:flutter_shopee_clone_ui/src/screen/home/widgets/product_load_more.dart';
 import 'package:flutter_shopee_clone_ui/src/screen/home/widgets/story.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
@@ -73,7 +74,8 @@ class _ContentState extends State<Content> {
             SizedBox(height: 12),
             _buildDivider(),
             Story(),
-            SizedBox(height: 300,)
+            _buildDivider(),
+            ProductLoadMore(),
           ],
         ),
       ),
