@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 class Header extends StatefulWidget {
   final TrackingScrollController scrollController;
@@ -47,12 +48,12 @@ class _HeaderState extends State<Header> {
                     SizedBox(width: 8),
                     _buildIconButton(
                       onPressed: () => print("click"),
-                      icon: Icons.shopping_cart,
+                      icon: MdiIcons.cartOutline,
                       notification: 20,
                     ),
                     _buildIconButton(
                       onPressed: () => print("click"),
-                      icon: Icons.chat,
+                      icon: MdiIcons.chatProcessingOutline,
                       notification: 9,
                     ),
                   ],
@@ -136,7 +137,7 @@ class _HeaderState extends State<Header> {
           ),
           prefixIconConstraints: sizeIcon,
           suffixIcon: Icon(
-            Icons.camera_alt,
+            MdiIcons.cameraOutline,
           ),
           suffixIconConstraints: sizeIcon,
           filled: true,
