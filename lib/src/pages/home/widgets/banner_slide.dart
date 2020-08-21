@@ -164,7 +164,7 @@ class CashInfo extends StatelessWidget {
     String subTitle,
     bool isCoin = false,
   }) {
-    final height = 24.0;
+    final height = 22.0;
     return Expanded(
       flex: 3,
       child: Column(
@@ -183,7 +183,7 @@ class CashInfo extends StatelessWidget {
                 Text(
                   title,
                   style: TextStyle(
-                    fontSize: 15,
+                    fontSize: 14,
                     color: Colors.black,
                   ),
                 ),

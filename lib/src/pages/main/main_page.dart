@@ -25,7 +25,8 @@ class _MainPageState extends State<MainPage> {
           body: IndexedStack(
             index: _selectedIndex,
             children: [
-              HomePage(),
+              HomePage(MediaQuery.of(context).size,
+                  MediaQuery.of(context).padding.bottom,),
               FeedPage(),
               LivePage(),
               NotificationPage(),
