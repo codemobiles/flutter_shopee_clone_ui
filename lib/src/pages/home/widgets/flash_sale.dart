@@ -1,6 +1,7 @@
 import 'package:countdown_flutter/countdown_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_shopee_clone_ui/src/models/flash_sale_model.dart';
+import 'package:flutter_shopee_clone_ui/src/utils/format.dart';
 import 'package:flutter_shopee_clone_ui/src/viewmodels/flash_sale_view_model.dart';
 import 'package:flutter_shopee_clone_ui/src/widgets/discount_painter.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -254,7 +255,7 @@ class FlashSaleItem extends StatelessWidget {
           ),
           children: <TextSpan>[
             TextSpan(
-              text: '${flashSale.price}',
+              text: '${Format().currency(flashSale.price, decimal: false)}',
               style: TextStyle(
                 fontSize: 18,
               ),
@@ -270,7 +271,7 @@ class FlashSaleItem extends StatelessWidget {
       children: [
         LinearPercentIndicator(
           center: Text(
-            "ขายแล้ว ${flashSale.sold}",
+           "ขายแล้ว ${Format().currency(flashSale.sold.toDouble(), decimal: false)}",
             style: TextStyle(
               color: Colors.white,
               fontSize: 12,

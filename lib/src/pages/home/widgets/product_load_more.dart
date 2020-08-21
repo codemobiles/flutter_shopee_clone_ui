@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_shopee_clone_ui/src/models/product_model.dart';
+import 'package:flutter_shopee_clone_ui/src/utils/format.dart';
 import 'package:flutter_shopee_clone_ui/src/viewmodels/product_view_model.dart';
 import 'package:flutter_shopee_clone_ui/src/widgets/discount_painter.dart';
 
@@ -189,7 +190,7 @@ class ProductItemCard extends StatelessWidget {
           ),
           children: <TextSpan>[
             TextSpan(
-              text: '${product.price.round()}',
+              text: '${Format().currency(product.price, decimal: false)}',
               style: TextStyle(
                 fontSize: 16,
               ),

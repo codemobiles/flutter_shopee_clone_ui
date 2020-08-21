@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_shopee_clone_ui/src/utils/format.dart';
 
 class BannerSlide extends StatelessWidget {
   @override
@@ -140,14 +141,14 @@ class CashInfo extends StatelessWidget {
             _buildInfo(
               image:
                   "https://img4.apk.tools/img/xbk4EEdkNeEWffk0o2IYKjUYGawIrs-8OVBnASSPsNv1xLsBHTHFG7nheYNkff79Jw=s300",
-              title: "\$5000",
+              title: "\$${Format().currency(5000.00)}",
               subTitle: "Dev from Home รับโค้ดส่งฟรี 100 ครั้งต่อเดือน",
             ),
             verticalDivider,
             _buildInfo(
               image:
                   "https://www.pngrepo.com/png/167109/180/dollar-coin-circle-with-symbol.png",
-              title: "1545.30 Coins",
+              title: "${Format().currency(1545.30)} Coins",
               subTitle: "นำ Coins มาแลกหัวใจ",
               isCoin: true,
             ),
